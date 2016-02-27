@@ -11,7 +11,7 @@ Python是一门流行的脚本语言，许多我们熟知网站的后端语言�
 **输出**
 每个语言的第一个程序都是Hello world嘛，而使用Python输出Hello World非常简单，只需使用`print()`函数即可。
 ```Python
-print('Hello World') #输出Hello World
+print('Hello World')   #输出Hello World
 print('Hello','World') #同样也输出Hello World，在print()函数中用“,”(其中","相当于一个空字符)可以连接两个字符串。
 ```
 **输入**
@@ -45,13 +45,13 @@ print('hello,',username)
 
 像其他编程语言一样，Python支持多种数据类型。包括:整型、浮点、字符串、布尔值、空值等基本类型。
 
-##### 整型/浮点
+##### 3.1整型/浮点
 
 整形和浮点类型是Python主要的两种数字类型。
 `2`表示一个整数，而`3.22`/`322E-4`表示一个浮点数。
 > 值得注意的是Python没有单独的long、short类型，整数类型可以表示任意的大小。
 
-##### 字符串的基本用法
+##### 3.2字符串的基本用法
 
 Python中定义一个字符串变量可以使用单引号或者双引号。`\ ` 同大部分语言一样，表示转义字符。
 ```Python
