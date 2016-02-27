@@ -8,13 +8,13 @@ Python是一门流行的脚本语言，许多我们熟知网站的后端语言�
 
 #### 1.输入输出
 
-*输出*
+**输出**
 每个语言的第一个程序都是Hello world嘛，而使用Python输出Hello World非常简单，只需使用`print()`函数即可。
 ```Python
 print('Hello World') #输出Hello World
 print('Hello','World') #同样也输出Hello World，在print()函数中用“,”(其中","相当于一个空字符)可以连接两个字符串。
 ```
-*输入*
+**输入**
 输入使用`input()`函数，它会将你输入的字符作为返回值返回给你，所以你需要使用一个变量来储存这个值。
 ```Python
 name = input()
@@ -36,7 +36,7 @@ print('hello,',username)
 
 #### 2.注释
 
-注释Python的注释不同于我们平时学习的语言，*Python使用#作为注释*而不是用`\\`。
+注释Python的注释不同于我们平时学习的语言，**Python使用`#`作为注释**而不是用`\\`。
 ```Python
 #comment with python
 ```
@@ -55,57 +55,62 @@ print('hello,',username)
 
 Python中定义一个字符串变量可以使用单引号或者双引号。`\ ` 同大部分语言一样，表示转义字符。
 ```Python
-str1 = "Isn't, he said."
-str2 = 'Isn\'t, he said.'
+str1 = "Isn't, he said."   #Isn't, he said
+str2 = 'Isn\'t, he said.'  #Isn't, he said
 ```
 
 那么当你在字符串中需要使用`\ `时怎么办呢？有两种方法:
 
 * 使用`\\`
     ```
-    print('C:\\some\\name')
+    print('C:\\some\\name')  #C:\some\name
     ```
 * 使用`r`
     ```
-    print(r'C:\some\name') # r = raw strings,也就是原字符串。
+    print(r'C:\some\name') # r = raw strings,也就是原字符串。#C:\some\name
+
     ```
 
-
-Python还提供了多行字符的表示方法，使用使用`"""`/`'''`来表示多行字符
+Python还提供了多行字符的表示方法，使用使用`"""`或`'''`来表示多行字符
 ```Python
-mutStr = '''This is a mutli-line string
-use \"Triple Quotes\" to show the mutli-line string'''
+mutStr = '''This is a multiple lines string
+use \"Triple Quotes\" to show the multiple string'''
 print(mutStr)
+
+# This is a multiple lines string
+  use "Triple Quotes" to show the multiple string
+
 ```
 
 Python还可以使用`+`和`*`来连接字符串。
 ```Python
-print(3 * ("Don't" + " repeat " + "youself "))
+print(3 * ("Don't" + " repeat " + "youself, ")) #Don't repeat youself, Don't repeat youself, Don't repeat youself
 ```
 
 如果你想把一个长字符串拆分成多段也非常简单
-```
+```Python
 print('Put several strings within parentheses '
       'to have them joined togather.')
+# Put several strings within parentheses to have them joined togather.'
 ```
 
-Python的字符串类型是支持下标方法的，所以你可以利用index获取相应的字符。另外*Python中的字符串是不可变的*，所以你不能给字符下标赋值。
+Python的字符串类型是支持下标方法的，所以你可以利用index获取相应的字符。另外**Python中的字符串是不可变的**，所以你不能给字符下标赋值。
 ```
 word = 'Python'
-print(word[0]) # P
-print(word[-1]) # n
-print(word[0:2]) #Py
-print(word[0:2] + word[2:]) #Python
-for w in word: # P y t h o n
+print(word[0])               #P
+print(word[-1])              #n
+print(word[0:2])             #Py
+print(word[0:2] + word[2:])  #Python
+for w in word:               # P y t h o n
     print(w)
 
-word[0] = 'N' # TypeError
+word[0] = 'N'                #TypeError
 ```
 
-`format()`方法是一种类似Obj—C中`%`的占位替换函数。
+`format()`方法是一种类似Obj—C中`%`的占位替换函数,使用起来也非常简单。
 ```
 str = "hello"
-print('{0} world'.format(str))
+print('{0} world'.format(str)) #Hello world
 ```
 
 
