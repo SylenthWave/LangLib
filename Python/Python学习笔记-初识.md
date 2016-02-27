@@ -68,7 +68,6 @@ str2 = 'Isn\'t, he said.'  #Isn't, he said
 * 使用`r`
     ```
     print(r'C:\some\name') # r = raw strings,也就是原字符串。#C:\some\name
-
     ```
 
 Python还提供了多行字符的表示方法，使用使用`"""`或`'''`来表示多行字符
@@ -78,7 +77,7 @@ use \"Triple Quotes\" to show the multiple string'''
 print(mutStr)
 
 # This is a multiple lines string
-  use "Triple Quotes" to show the multiple string
+# use "Triple Quotes" to show the multiple string
 
 ```
 
@@ -90,12 +89,11 @@ print(3 * ("Don't" + " repeat " + "youself, ")) #Don't repeat youself, Don't rep
 如果你想把一个长字符串拆分成多段也非常简单
 ```Python
 print('Put several strings within parentheses '
-      'to have them joined togather.')
-# Put several strings within parentheses to have them joined togather.'
+      'to have them joined togather.') #Put several strings within parentheses to have them joined togather.'
 ```
 
 Python的字符串类型是支持下标方法的，所以你可以利用index获取相应的字符。另外**Python中的字符串是不可变的**，所以你不能给字符下标赋值。
-```
+```Python
 word = 'Python'
 print(word[0])               #P
 print(word[-1])              #n
@@ -108,7 +106,7 @@ word[0] = 'N'                #TypeError
 ```
 
 `format()`方法是一种类似Obj—C中`%`的占位替换函数,使用起来也非常简单。
-```
+```Python
 str = "hello"
 print('{0} world'.format(str)) #Hello world
 ```
