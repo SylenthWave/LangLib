@@ -54,7 +54,7 @@ print('hello,',username)
 
 #### 3.2字符串的基本用法
 
-##### 转义
+##### 3.2.1转义
 
 Python中定义一个字符串变量可以使用单引号或者双引号。`\ ` 同大部分语言一样，表示转义字符。
 ```Python
@@ -79,7 +79,7 @@ str = "hello"
 print('{0} world'.format(str)) #Hello world
 ```
 
-##### 连接
+##### 3.2.2连接
 
 Python还提供了多行字符的表示方法，使用使用`"""`或`'''`来表示多行字符
 ```Python
@@ -103,7 +103,7 @@ print('Put several strings within parentheses '
       'to have them joined togather.') #Put several strings within parentheses to have them joined togather.'
 ```
 
-##### 下标方法
+##### 3.2.3下标方法
 
 Python的字符串类型是支持下标方法的，所以你可以利用index获取相应的字符。另外**Python中的字符串是不可变的**，所以你不能给字符下标赋值。
 ```Python
@@ -118,11 +118,32 @@ for w in word:               # P y t h o n
 word[0] = 'N'                #TypeError
 ```
 
-##### 字符串相关方法
+##### 3.2.4字符串相关方法
 
+**大小写转换方法**
 
+`Capitalized()`方法用于字符串的首字符大写
+```Python
+### 1 capitalize() 首字母大写
+str = 'string'
+print('str = {0}'.format(str))
+print('str.capitalize() = ' + str.capitalize())
+```
+`lower()`将字符串转换成小写形式
+```
+### 2 lower() 小写转换
+str = 'ABC'
+print('str = %s' % (str))
+print('str = %s' % (str.lower()))
+```
 
-
+`upper()`将字符串转换成大写形式
+```
+### 3 upper() 大写转换
+str = 'abc'
+print('str = %s' % (str))
+print('str = %s' % (str.upper()))
+```
 
 
 
