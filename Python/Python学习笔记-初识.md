@@ -206,6 +206,7 @@ else:
 ```
 
 `isalnum`    
+
 **查询是否字符串中是否包含数字和字母（需要注意的是空格是特殊符号）**    
 参数:无    
 返回:`True` 或 `False`    
@@ -220,7 +221,7 @@ b2 = str2.isalnum() # False - 包含空格
 b3 = str3.isalnum() # False - 包含特殊字符
 ```
 
-`isalpha()`
+`isalpha()`    
 **查询是否字符串中是否只包含字母（需要注意的是空格是特殊符号）**    
 参数:无    
 返回:`True` 或 `False`    
@@ -236,7 +237,7 @@ b3 = str3.isalpha() # False - 包含特殊字符
 b4 = str4.isalpha() # True
 ```
  
-`isdigit()`
+`isdigit()`    
 **查询是否字符串中是否只包含数字（需要注意的是空格是特殊符号）**    
 参数:无    
 返回:`True` 或 `False`    
