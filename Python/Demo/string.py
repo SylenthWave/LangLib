@@ -17,6 +17,11 @@ show multiple lines string''') #多行字符
 print(3 * ("Don't " + "repeat " + "youself "))
 print('Put several strings within parentheses '
       'to have them joined together.')
+str = 'hello'
+times = 3
+print('%s world %d times' % (str,times))
+print('this is a \
+string')
 for w in 'Python':
     print(w)
 
@@ -45,4 +50,26 @@ str = 'aaabbbccc'
 print('str = ' + str)
 print("str.count('a') = %d" % str.count('a'))
 print('str.count(\'a\') = %d' % str.count('a',0,3))
+
+### 5 encode()/decode() 字符串序列化反序列化方法
+###   参数：1.encoding/decoding 编码格式
+###         2.errors 错误处理类型，默认为'strict'=UnicodeError
+str = 'Hello world'
+str = str.encode('utf32','strict')
+print('str.encode() = ',str)
+str = str.decode('utf32','strict')
+print('str.decode() = ',str)
+
+### 6 endswith(suffix, beg=0, end=len(string))
+###   参数: 1.需要寻找的字符串
+###         2.可选参数，一个字符串范围
+str = 'once upon a time '
+if str.endswith(' ') == True:
+    print('True')
+else:
+    print('Flase')
+
+str = 'hello world'
+print('world idx = %d' % str.find('world'))
+print('! idx = %d' % str.find('!'))
 

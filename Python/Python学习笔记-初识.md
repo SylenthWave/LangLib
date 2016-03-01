@@ -1,12 +1,12 @@
 # 初识Python
 
-> 今天开始正式学习Python，并记下笔记。一定要坚持下去，每天进步一点点~
+> Python是一门流行的脚本语言，许多我们熟知网站的后端语言都是Python。如知乎、豆瓣等等。它也是一门非常适合新手的语言，入门非常容易，当然如果你想深入学习的话还是需要下一些功夫的。这篇笔记主要是用来记录我自己学习Python的过程，因为它并不是我的工作语言，所以我想把学习过程记录下来更加有助于日后的复习吧。下面就直接进入正题了:)
 
-Python是一门流行的脚本语言，许多我们熟知网站的后端语言都是Python。如知乎、豆瓣等等。它也是一门非常适合新手的语言，入门非常容易，当然如果你想深入学习的话还是需要下一些功夫的。这篇笔记主要是用来记录我自己学习Python的过程，因为它并不是我的工作语言，所以我想把学习过程记录下来更加有助于日后的复习吧。下面就直接进入正题了:)
+
 
 ## 一、输入输出
 
-**输出**    
+### 输出
 每个语言的第一个程序都是Hello world嘛，而使用Python输出Hello World非常简单，只需使用`print()`函数即可。
 ```Python
 print('Hello World')   #输出Hello World
@@ -14,7 +14,7 @@ print('Hello','World') #同样也输出Hello World，在print()函数中用“,�
 print('Hello',end=)
 print('World',end=)    ##print()函数总是会自动带一个换行符，使用end=可以取消换行符
 ```
-**输入**    
+### 输入
 输入使用`input()`函数，它会将你输入的字符作为返回值返回给你，所以你需要使用一个变量来储存这个值。
 ```Python
 name = input()
@@ -69,8 +69,18 @@ str2 = 'Isn\'t, he said.'  #Isn't, he said
 
 `format()`方法是一种类似OC中`%`的占位替换函数,使用起来也非常简单。
 ```Python
-str = "hello"
-print('{0} world'.format(str)) #Hello world
+str = 'hello'
+print('{0} world'.format(str)) #hello world
+
+# 当只有一个参数时
+str = 'hello'
+print('%s world' % str) #hello world
+
+# 当有多个参数时
+str = 'hello'
+times = 3
+print('%s world %d times' % (str, times)) #hello world 3 times
+
 ```
 
 ### 连接
@@ -84,6 +94,12 @@ print(mutStr)
 # This is a multiple lines string
 # use "Triple Quotes" to show the multiple string
 
+```
+
+如果不想在一行中写太多内容可以在字符串中使用`\ `来打断字符串，这样返回的字符串和之前并无差别
+```Python
+str = 'this is a \
+string'
 ```
 
 Python还可以使用`+`和`*`来连接字符串。
@@ -114,7 +130,7 @@ word[0] = 'N'                #TypeError
 
 ### 字符串相关方法
 
-**大小写转换方法**
+#### 大小写转换方法
 
 `Capitalized()`方法用于字符串的首字符大写
 ```Python
@@ -138,6 +154,48 @@ str = 'abc'
 print('str = %s' % (str))
 print('str = %s' % (str.upper()))
 ```
+
+#### 字符串序列化方法
+
+`encode(encode='UTF-8',errors='strict')和decode(encode='UTF-8','strict')`
+字符串的序列化与反序列化
+参数：编码类型,错误处理类型
+返回：序列化或反序列化后的字符串
+
+```Python
+str = 'Hello world'
+
+str = str.encode('utf32','strict')
+print('str.encode() = ',str) #\xff\xfe\x00\x00H\x00\x00\x00e\x00\x00\x00l\x00\x00\x00l\x00\x00\x00o\x00\x00\x00 \x00\x00\x00w\x00\x00\x00o\x00\x00\x00r\x00\x00\x00l\x00\x00\x00d\x00\x00\x00
+
+str = str.decode('utf32','strict')
+print('str.decode() = ',str) #hello world
+```
+
+#### 字符串查询相关方法
+
+`find(str,beg=0,end=len(string))`
+参数：目标字符串，起始点和终止点（idx）
+返回：返回目标字符串的Index，如果没找到返回-1
+
+```Python
+str = 'hello world'
+print('idx = %d' % str.find('world')) # idx = 6
+print('! idx = %d' % str.find('!'))   # idx = -1
+```
+
+`endswith(suffix, beg=0, end=len(string))`
+参数：后缀，起始点和终止点（idx）
+返回：返回一个Boolean值
+
+```Python
+str = 'once upon a time'
+if str.endswith('time') == True:
+    print('True') # 'True'
+else:
+    print('Flase')
+```
+
 
 
 
