@@ -70,11 +70,11 @@ str2 = 'Isn\'t, he said.'  #Isn't, he said
 `format()`方法是一种类似OC中`%`的占位替换函数,使用起来也非常简单。
 ```Python
 str = 'hello'
-print('{0} world'.format(str)) #hello world
+print('{0} world'.format(str)) # hello world
 
 # 当只有一个参数时
 str = 'hello'
-print('%s world' % str) #hello world
+print('%s world' % str) # hello world
 
 # 当有多个参数时
 str = 'hello'
@@ -96,12 +96,6 @@ print(mutStr)
 
 ```
 
-如果不想在一行中写太多内容可以在字符串中使用`\ `来打断字符串，这样返回的字符串和之前并无差别
-```Python
-str = 'this is a \
-string'
-```
-
 Python还可以使用`+`和`*`来连接字符串。
 ```Python
 print(3 * ("Don't" + " repeat " + "youself, ")) #Don't repeat youself, Don't repeat youself, Don't repeat youself
@@ -111,6 +105,10 @@ print(3 * ("Don't" + " repeat " + "youself, ")) #Don't repeat youself, Don't rep
 ```Python
 print('Put several strings within parentheses '
       'to have them joined togather.') #Put several strings within parentheses to have them joined togather.'
+
+str = 'this is a \
+string'
+# this is a string
 ```
 
 ### 下标方法
@@ -136,31 +134,31 @@ word[0] = 'N'                #TypeError
 ```Python
 ### 1 capitalize() 首字母大写
 str = 'string'
-print('str = {0}'.format(str))
-print('str.capitalize() = ' + str.capitalize())
+print('str = {0}'.format(str)) # str = string
+print('str.capitalize() = ' + str.capitalize()) # str = String
 ```
 `lower()`将字符串转换成小写形式
 ```Python
 ### 2 lower() 小写转换
 str = 'ABC'
-print('str = %s' % (str))
-print('str = %s' % (str.lower()))
+print('str = %s' % (str)) # str = 'ABC'
+print('str = %s' % (str.lower())) # str = 'abc'
 ```
 
 `upper()`将字符串转换成大写形式
 ```Python
 ### 3 upper() 大写转换
 str = 'abc'
-print('str = %s' % (str))
-print('str = %s' % (str.upper()))
+print('str = %s' % (str)) # str = 'abc'
+print('str = %s' % (str.upper())) # str = 'ABC'
 ```
 
 #### 字符串序列化方法
 
 `encode(encode='UTF-8',errors='strict')和decode(encode='UTF-8','strict')`
-字符串的序列化与反序列化
-参数：编码类型,错误处理类型
-返回：序列化或反序列化后的字符串
+字符串的序列化与反序列化    
+参数：编码类型,错误处理类型    
+返回：序列化或反序列化后的字符串    
 
 ```Python
 str = 'Hello world'
@@ -174,19 +172,30 @@ print('str.decode() = ',str) #hello world
 
 #### 字符串查询相关方法
 
-`find(str,beg=0,end=len(string))`
-参数：目标字符串，起始点和终止点（idx）
-返回：返回目标字符串的Index，如果没找到返回-1
+`find(str,beg=0,end=len(string))`    
+参数：目标字符串，起始点和终止点（idx）    
+返回：返回目标字符串的Index，如果没找到返回-1    
 
 ```Python
 str = 'hello world'
 print('idx = %d' % str.find('world')) # idx = 6
-print('! idx = %d' % str.find('!'))   # idx = -1
+print('idx = %d' % str.find('!'))   # idx = -1
 ```
 
-`endswith(suffix, beg=0, end=len(string))`
-参数：后缀，起始点和终止点（idx）
-返回：返回一个Boolean值
+`index(str,beg=0,end=len(string))`    
+参数：目标字符串，起始点和终止点（idx）    
+返回：返回目标字符串的Index，如果没找到返回抛出异常    
+
+```Python
+str = 'hello world'
+print('idx = %d' % str.index('world')) # idx = 6
+print('idx = %d' % str.('!'))   # ValueError: substring not found
+```
+
+`endswith(suffix, beg=0, end=len(string))`    
+用于查找是否字符串包含目标后缀字符串    
+参数：后缀，起始点和终止点（idx）    
+返回：返回一个Boolean值    
 
 ```Python
 str = 'once upon a time'
@@ -195,6 +204,7 @@ if str.endswith('time') == True:
 else:
     print('Flase')
 ```
+
 
 
 

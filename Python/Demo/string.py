@@ -73,3 +73,7 @@ str = 'hello world'
 print('world idx = %d' % str.find('world'))
 print('! idx = %d' % str.find('!'))
 
+str = 'hello world'
+print('world idx = %d' % str.index('world'))
+print('! idx = %d' % str.index('!'))
+
