@@ -205,8 +205,7 @@ else:
     print('Flase')
 ```
 
-`isalnum`    
-
+`isalnum()`    
 **查询是否字符串中是否包含数字和字母（需要注意的是空格是特殊符号）**    
 参数:无    
 返回:`True` 或 `False`    
@@ -237,7 +236,7 @@ b3 = str3.isalpha() # False - 包含特殊字符
 b4 = str4.isalpha() # True
 ```
  
-`isdigit()`    
+**`isdigit()`**    
 **查询是否字符串中是否只包含数字（需要注意的是空格是特殊符号）**    
 参数:无    
 返回:`True` 或 `False`    
