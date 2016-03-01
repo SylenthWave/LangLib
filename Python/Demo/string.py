@@ -79,5 +79,5 @@ if str.isalnum():
 else:
     print('False')
 
-str = '1hello'
+str = 'hello'
 print(str.isalpha())

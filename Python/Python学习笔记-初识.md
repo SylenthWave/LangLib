@@ -130,14 +130,14 @@ word[0] = 'N'                #TypeError
 
 #### 大小写转换方法
 
-**`Capitalized()`**方法用于字符串的首字符大写
+##### **`Capitalized()`**方法用于字符串的首字符大写
 ```Python
 ### 1 capitalize() 首字母大写
 str = 'string'
 print('str = {0}'.format(str)) # str = string
 print('str.capitalize() = ' + str.capitalize()) # str = String
 ```
-**`lower()`**将字符串转换成小写形式
+##### **`lower()`**将字符串转换成小写形式
 ```Python
 ### 2 lower() 小写转换
 str = 'ABC'
