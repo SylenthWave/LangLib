@@ -130,14 +130,14 @@ word[0] = 'N'                #TypeError
 
 #### 大小写转换方法
 
-`Capitalized()`方法用于字符串的首字符大写
+**`Capitalized()`**方法用于字符串的首字符大写
 ```Python
 ### 1 capitalize() 首字母大写
 str = 'string'
 print('str = {0}'.format(str)) # str = string
 print('str.capitalize() = ' + str.capitalize()) # str = String
 ```
-`lower()`将字符串转换成小写形式
+**`lower()`**将字符串转换成小写形式
 ```Python
 ### 2 lower() 小写转换
 str = 'ABC'
@@ -145,7 +145,7 @@ print('str = %s' % (str)) # str = 'ABC'
 print('str = %s' % (str.lower())) # str = 'abc'
 ```
 
-`upper()`将字符串转换成大写形式
+**`upper()`**将字符串转换成大写形式
 ```Python
 ### 3 upper() 大写转换
 str = 'abc'
@@ -155,7 +155,7 @@ print('str = %s' % (str.upper())) # str = 'ABC'
 
 #### 字符串序列化方法
 
-`encode(encode='UTF-8',errors='strict')和decode(encode='UTF-8','strict')`    
+**`encode(encode='UTF-7',errors='strict')和decode(encode='UTF-8','strict')`**    
 **字符串的序列化与反序列化**    
 参数：编码类型,错误处理类型    
 返回：序列化或反序列化后的字符串    
@@ -172,7 +172,7 @@ print('str.decode() = ',str) #hello world
 
 #### 字符串查询相关方法
 
-`find(str,beg=0,end=len(string))`    
+**`find(str,beg=0,end=len(string))`**    
 参数：目标字符串，起始点和终止点（idx）    
 返回：返回目标字符串的Index，如果没找到返回-1    
 
@@ -182,7 +182,7 @@ print('idx = %d' % str.find('world')) # idx = 6
 print('idx = %d' % str.find('!'))   # idx = -1
 ```
 
-`index(str,beg=0,end=len(string))`    
+**`index(str,beg=0,end=len(string))`**    
 参数：目标字符串，起始点和终止点（idx）    
 返回：返回目标字符串的Index，如果没找到返回抛出异常    
 
@@ -192,7 +192,7 @@ print('idx = %d' % str.index('world')) # idx = 6
 print('idx = %d' % str.('!'))   # ValueError: substring not found
 ```
 
-`endswith(suffix, beg=0, end=len(string))`    
+**`endswith(suffix, beg=0, end=len(string))`**    
 **用于查找是否字符串包含目标后缀字符串**    
 参数：后缀，起始点和终止点（idx）    
 返回：返回一个Boolean值    
@@ -205,7 +205,7 @@ else:
     print('Flase')
 ```
 
-`isalnum()`    
+**`isalnum()`**    
 **查询是否字符串中是否包含数字和字母（需要注意的是空格是特殊符号）**    
 参数:无    
 返回:`True` 或 `False`    
@@ -220,7 +220,7 @@ b2 = str2.isalnum() # False - 包含空格
 b3 = str3.isalnum() # False - 包含特殊字符
 ```
 
-`isalpha()`    
+**`isalpha()`**    
 **查询是否字符串中是否只包含字母（需要注意的是空格是特殊符号）**    
 参数:无    
 返回:`True` 或 `False`    
