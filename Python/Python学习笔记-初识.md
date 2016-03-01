@@ -155,8 +155,8 @@ print('str = %s' % (str.upper())) # str = 'ABC'
 
 #### 字符串序列化方法
 
-`encode(encode='UTF-8',errors='strict')和decode(encode='UTF-8','strict')`
-字符串的序列化与反序列化    
+`encode(encode='UTF-8',errors='strict')和decode(encode='UTF-8','strict')`    
+**字符串的序列化与反序列化**    
 参数：编码类型,错误处理类型    
 返回：序列化或反序列化后的字符串    
 
@@ -193,7 +193,7 @@ print('idx = %d' % str.('!'))   # ValueError: substring not found
 ```
 
 `endswith(suffix, beg=0, end=len(string))`    
-用于查找是否字符串包含目标后缀字符串    
+**用于查找是否字符串包含目标后缀字符串**    
 参数：后缀，起始点和终止点（idx）    
 返回：返回一个Boolean值    
 
@@ -205,8 +205,50 @@ else:
     print('Flase')
 ```
 
+`isalnum`    
+**查询是否字符串中是否包含数字和字母（需要注意的是空格是特殊符号）**    
+参数:无    
+返回:`True` 或 `False`    
 
+```Python
+str1 = '22abc'
+str2 = '22abc '
+str3 = '**222s'
 
+b1 = str1.isalnum() # True
+b2 = str2.isalnum() # False - 包含空格
+b3 = str3.isalnum() # False - 包含特殊字符
+```
+
+`isalpha()`
+**查询是否字符串中是否只包含字母（需要注意的是空格是特殊符号）**    
+参数:无    
+返回:`True` 或 `False`    
+```python
+str1 = '22abc'
+str2 = '22abc '
+str3 = '**222s'
+str4 = 'abc'
+
+b1 = str1.isalpha() # False
+b2 = str2.isalpha() # False - 包含空格
+b3 = str3.isalpha() # False - 包含特殊字符
+b4 = str4.isalpha() # True
+```
+ 
+`isdigit()`
+**查询是否字符串中是否只包含数字（需要注意的是空格是特殊符号）**    
+参数:无    
+返回:`True` 或 `False`    
+```python
+str1 = '22'
+str2 = '22abc '
+str3 = '**222s'
+
+b1 = str1.isalpha() # True
+b2 = str2.isalpha() # False - 包含空格
+b3 = str3.isalpha() # False - 包含特殊字符
+```
 
 
 

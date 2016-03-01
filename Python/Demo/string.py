@@ -73,7 +73,11 @@ str = 'hello world'
 print('world idx = %d' % str.find('world'))
 print('! idx = %d' % str.find('!'))
 
-str = 'hello world'
-print('world idx = %d' % str.index('world'))
-print('! idx = %d' % str.index('!'))
+str = '200 hhhssssxxxxeffsd888338'
+if str.isalnum():
+    print('True')
+else:
+    print('False')
 
+str = '1hello'
+print(str.isalpha())
