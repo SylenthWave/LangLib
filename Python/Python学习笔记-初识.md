@@ -169,7 +169,7 @@ str = str.decode('utf32','strict')
 print('str.decode() = ',str) #hello world
 ```
 
-#### 字符串查询相关方法
+#### 字符串判断相关方法
 
 ##### `find(str,beg=0,end=len(string))`
 参数：目标字符串，起始点和终止点（idx）    
@@ -245,16 +245,110 @@ b2 = str2.isalpha() # False - 包含空格
 b3 = str3.isalpha() # False - 包含特殊字符
 ```
 
+##### `istitle()`查询是否是标题（标题一般是首字符大写）
+参数:无    
+返回:`true` 或 `false`    
+```python
+str1 = 'hello world'
+str2 = 'hello world'
+b2 = str2.istitle() # True - 包含空格
+b3 = str3.istitle() # False - 包含特殊字符
+```
 
+##### `islower()`是否都是小写字符
+参数:无    
+返回:`true` 或 `false`    
+```python
+str = 'hello world'
+b = str.islower() # True
 
+str = 'Hello world'
+b = str.islower() # False
+```
 
+##### `isupper()`是否都是大写字符
+参数:无    
+返回:`True` 或 `False`    
+```python
+str = 'hello world'
+b = str.islower() # False
 
+str = 'Hello world'
+b = str.islower() # False
 
+str = 'HELLO WORLD'
+b = str.isupper() # True
+```
 
+##### `isnumeric()`判断是否字符串是数字（此方法只能对unicode字符串使用）
+参数:无    
+返回:`True` 或 `False`    
+```python
+str = u'123abc'
+b = str.isnumeric() # False
 
+str = u'123'
+b = str.isnumeric() # True
+```
 
+##### `isspace()`判断是否字符串只是空字符
+参数:无    
+返回:`True` 或 `False`    
+```python
+str = 'This is a string'
+b = str.isspace() # False
 
+str = '   '
+b = str.isspace() # True
+```
 
+#### 字符串连接、删除
+
+##### `join(sequence)`用目标字符串连接字符串序列
+参数:sequence字符串数组     
+返回:返回连接后的字符串    
+```python
+str = '*'
+str = str.join(['1','2','3']) # 1*2*3
+```
+
+##### `ljust(width[,fillchar])`
+参数:width:左起宽度，fillchar:填充字符      
+返回:返回长度为width的字符串，如果width大于目标字符剩余字符使用fillchar填充，如果没有fillchar参数则使用空字符填充，如果width小于目标字符宽度返回目标字符串    
+```python
+str = 'hi'
+str = str.ljust(5)
+print(len(str)) # 5
+print(str)      # hi   
+
+str = str.ljust(5,'0')
+print(str)      # hi000
+```
+
+##### `lstrip([chars])`
+参数:chars:接受一个字符串参数      
+返回:如果目标字符串左起包含chars字符串，那么将其删除。chars默认为空字符    
+```python
+str = '   string'
+str = str.lstrip()
+print(str) # string
+
+str = '11111string'
+print(str) # string
+```
+
+##### `split(str,num)`
+参数: str需要分离字符的字符或者字符串，num分离次数
+返回值: 返回一个切割好的字符串数组
+```python
+str = 'num1%num2%num3'
+arr = str.split('%')
+print(arr) # ['num1','num2','num3']
+
+str = 'A - 13, B - 14, C - 29'
+d = dict((k.strip(),v.strip()) for k,v in (item.split('-') for item in str.split(',')))
+print(d) # {'A': '13', 'B': '14', 'C': '29'}
+```
 
 
 

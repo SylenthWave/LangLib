@@ -81,3 +81,40 @@ else:
 
 str = 'hello'
 print(str.isalpha())
+
+str1 = 'Hello World'
+str2 = 'Hello world'
+print(str1.istitle())
+print(str2.istitle())
+
+print(str1.isupper())
+print(str1.islower())
+
+str1 = 'HELLO WORLD'
+str2 = 'hello world'
+
+print(str1.isupper())
+print(str2.islower())
+
+str = '-'
+print(str.join(['1','2','3']))
+
+str = 'hello '
+print(len(str))
+str = str.ljust(20,'0')
+print(str)
+print(len(str))
+
+
+str = '1111 string'
+print(str.lstrip('1111'))
+print(len(str.lstrip('1111')))
+
+str = 'num1%num2%num3'
+arr = str.split('%',1)
+print(arr)
+
+str = 'A - 13, B - 14, C - 29'
+d = dict((k.strip(),v.strip()) for k,v in (item.split('-') for item in str.split(',')))
+print(d)
+
