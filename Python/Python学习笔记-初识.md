@@ -334,6 +334,7 @@ str = str.lstrip()
 print(str) # string
 
 str = '11111string'
+str = str.lstrip('1')
 print(str) # string
 ```
 

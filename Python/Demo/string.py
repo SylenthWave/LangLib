@@ -107,8 +107,8 @@ print(len(str))
 
 
 str = '1111 string'
-print(str.lstrip('1111'))
-print(len(str.lstrip('1111')))
+print(str.lstrip('1'))
+print(len(str.lstrip('1')))
 
 str = 'num1%num2%num3'
 arr = str.split('%',1)
