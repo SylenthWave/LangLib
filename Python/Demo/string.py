@@ -118,3 +118,7 @@ str = 'A - 13, B - 14, C - 29'
 d = dict((k.strip(),v.strip()) for k,v in (item.split('-') for item in str.split(',')))
 print(d)
 
+str = 'hi'
+print('str is ', str.rjust(5))
+
+

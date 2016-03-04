@@ -325,6 +325,21 @@ str = str.ljust(5,'0')
 print(str)      # hi000
 ```
 
+与之相对应的是`rjust(width[,fillchar])`
+参数:width:右起宽度，fillchar:填充字符      
+返回:返回长度为width的字符串，如果width大于目标字符剩余字符使用fillchar填充，如果没有fillchar参数则使用空字符填充，如果width小于目标字符宽度返回目标字符串    
+```python
+str = 'hi'
+str = str.rjust(5)
+print(len(str)) # 5
+print(str)      #    hi
+
+str = str.rjust(5,'0')
+print(str)      # 000hi
+```
+
+
+
 ##### `lstrip([chars])`
 参数:chars:接受一个字符串参数      
 返回:如果目标字符串左起包含chars字符串，那么将其删除。chars默认为空字符    
@@ -350,6 +365,8 @@ str = 'A - 13, B - 14, C - 29'
 d = dict((k.strip(),v.strip()) for k,v in (item.split('-') for item in str.split(',')))
 print(d) # {'A': '13', 'B': '14', 'C': '29'}
 ```
+
+
 
 
 
