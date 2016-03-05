@@ -331,7 +331,7 @@ str = '*'
 str = str.join(['1','2','3']) # 1*2*3
 ```
 
-##### `ljust(width[,fillchar])`
+##### `ljust(width[,fillchar])` 左填充
 参数:width:左起宽度，fillchar:填充字符      
 返回:返回长度为width的字符串，如果width大于目标字符剩余字符使用fillchar填充，如果没有fillchar参数则使用空字符填充，如果width小于目标字符宽度返回目标字符串    
 ```python
@@ -344,7 +344,7 @@ str = str.ljust(5,'0')
 print(str)      # hi000
 ```
 
-与之相对应的是`rjust(width[,fillchar])`
+##### `rjust(width[,fillchar])` 右填充
 参数:width:右起宽度，fillchar:填充字符      
 返回:返回长度为width的字符串，如果width大于目标字符剩余字符使用fillchar填充，如果没有fillchar参数则使用空字符填充，如果width小于目标字符宽度返回目标字符串    
 ```python
@@ -357,7 +357,7 @@ str = str.rjust(5,'0')
 print(str)      # 000hi
 ```
 
-##### `lstrip([chars])`
+##### `lstrip([chars])` 左切割
 参数:chars:接受一个字符串参数      
 返回:如果目标字符串左起包含chars字符串，那么将其删除。chars默认为空字符    
 ```python
@@ -370,7 +370,7 @@ str = str.lstrip('1')
 print(str) # string
 ```
 
-##### `rstrip([chars])`
+##### `rstrip([chars])` 右切割
 参数:chars:接受一个字符串参数      
 返回:如果目标字符串右起包含chars字符串，那么将其删除。chars默认为空字符    
 ```python
@@ -383,7 +383,7 @@ str = str.lstrip('1')
 print(str) # string
 ```
 
-##### `split(str,num)`
+##### `split(str,num)` 字符串分离数组方法
 参数: str需要分离字符的字符或者字符串，num分离次数
 返回值: 返回一个切割好的字符串数组
 ```python
@@ -396,7 +396,7 @@ d = dict((k.strip(),v.strip()) for k,v in (item.split('-') for item in str.split
 print(d) # {'A': '13', 'B': '14', 'C': '29'}
 ```
 
-##### `replace(old,new,[,max])`
+##### `replace(old,new,[,max])` 字符串替换方法
 参数: old需要替换的字符，new替换字符，max替换次数
 返回值: 返回替换完成的字符串
 ```python
