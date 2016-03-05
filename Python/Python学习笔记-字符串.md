@@ -39,6 +39,13 @@ print('hello,',username)
 ```Python
 #comment with python
 ```
+对于多行注释可以使用`"""`
+
+```Python
+"""
+This is a comment with multi-line
+"""
+```
 
 ## 三、整型/浮点
 
@@ -191,6 +198,18 @@ print('idx = %d' % str.index('world')) # idx = 6
 print('idx = %d' % str.('!'))   # ValueError: substring not found
 ```
 
+##### `startswith(str, beg=0, end=len(string))`用于查找是否字符串包含目标后缀字符串
+参数：前缀，起始点和终止点（idx）    
+返回：返回一个Boolean值    
+
+```Python
+str = 'once upon a time'
+if str.startswith('once') == True:
+    print('True') # 'True'
+else:
+    print('Flase')
+```
+
 ##### `endswith(suffix, beg=0, end=len(string))`用于查找是否字符串包含目标后缀字符串
 参数：后缀，起始点和终止点（idx）    
 返回：返回一个Boolean值    
@@ -338,8 +357,6 @@ str = str.rjust(5,'0')
 print(str)      # 000hi
 ```
 
-
-
 ##### `lstrip([chars])`
 参数:chars:接受一个字符串参数      
 返回:如果目标字符串左起包含chars字符串，那么将其删除。chars默认为空字符    
@@ -349,6 +366,19 @@ str = str.lstrip()
 print(str) # string
 
 str = '11111string'
+str = str.lstrip('1')
+print(str) # string
+```
+
+##### `rstrip([chars])`
+参数:chars:接受一个字符串参数      
+返回:如果目标字符串右起包含chars字符串，那么将其删除。chars默认为空字符    
+```python
+str = 'string    '
+str = str.rstrip()
+print(str) # string
+
+str = 'string111111'
 str = str.lstrip('1')
 print(str) # string
 ```
@@ -366,6 +396,18 @@ d = dict((k.strip(),v.strip()) for k,v in (item.split('-') for item in str.split
 print(d) # {'A': '13', 'B': '14', 'C': '29'}
 ```
 
+##### `replace(old,new,[,max])`
+参数: old需要替换的字符，new替换字符，max替换次数
+返回值: 返回替换完成的字符串
+```python
+str = 'num1%num2%num3'
+str = str.replace('%',' ')
+print(str) # num1 num2 num3
+
+str = str.replace(' ', '%', 1)
+print(str) # num1%num2 num3
+
+```
 
 
 
