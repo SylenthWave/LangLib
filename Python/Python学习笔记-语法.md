@@ -182,6 +182,15 @@ var1,var2,var3 = 0,1,2
     # 0 1 2 3 4 6 7 8 9 end
     ```
 
+## 函数
+
+函数是什么呢？就是一段有名字的代码块嘛。在Python中使用`def`关键字定义一个函数。既然是函数就会有相应的参数和返回值。在Python中我们并不需要显示的指定参数和返回值类型。甚至我们都**不需要写返回值类型**。因为Python默认隐式的为我们的函数添加了返回类型。
+
+```python
+def input_yourname(name):
+    return 'hello ' + name
+print(input_yourname('Python')) # hello Python
+```
 
 
 
