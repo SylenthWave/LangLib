@@ -1,7 +1,14 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-def input_yourname(name):
-    return 'hello ' + name
+str = 'hello python'
+test = 10
+def greet_you(name):
+    global str,test
+    str = 'hello ' + name
+    test += 100
+    return str
 
-print(input_yourname('Swift'))
+print(greet_you('Robbin'))
+print('str =', str)
+print('test =',test)

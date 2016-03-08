@@ -184,6 +184,7 @@ var1,var2,var3 = 0,1,2
 
 ## 函数
 
+#### 定义
 函数是什么呢？就是一段有名字的代码块嘛。在Python中使用`def`关键字定义一个函数。既然是函数就会有相应的参数和返回值。在Python中我们并不需要显示的指定参数和返回值类型。甚至我们都**不需要写返回值类型**。因为Python默认隐式的为我们的函数添加了返回类型。
 
 ```python
@@ -192,7 +193,47 @@ def input_yourname(name):
 print(input_yourname('Python')) # hello Python
 ```
 
+#### 文档字符串
+上面函数的参数是name，由于Python的特性，name这个参数实际上可以是任意类型。但是当我们使用的时候，最好又一些说明来告知函数的使用者。所以就有了文档字符串。
 
+```python
+def input_yourname(name):
+    """print hello yourname param name is str type"""
+    return 'hello ' + name
+print(input_yourname('Python')) # hello Python
+print(input_yourname.__doc__) # print hello yourname param name is str type
+```
+
+#### 局部变量
+函数中的变量都是局部变量。当我们为函数赋值的时候，实际上它是对外部变量进行了copy，为其创建了一个同名变量，所以当改变函数体内部变量的值时并不会影响外部变量。
+
+```python
+x = 10
+def changeX(x):
+    print(x) # 10
+    x += 10
+    print('change x to',x) # change x to 20
+changeX(x)
+print('x = ',x) # x = 10
+```
+
+#### `global`全局变量
+
+使用`global`关键字可以在函数内部改变外部变量的值。需要注意的是，使用`global`的方式是`global + 变量名`。可以同时声明多个全局变量，使用`,`分隔变量名即可。
+
+```python
+str = 'hello python'
+test = 10
+def greet_you(name):
+    global str,test
+    str = 'hello ' + name
+    test += 100
+    return str
+
+print(greet_you('Robbin')) # hello Robbin
+print('str =', str) # str = hello Robbin
+print('test =',test) # test = 110
+```
 
 
 
