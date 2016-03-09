@@ -235,6 +235,65 @@ print('str =', str) # str = hello Robbin
 print('test =',test) # test = 110
 ```
 
+#### 函数默认值
+
+你可以为函数创建一个默认值以便当没有参数时函数也会做出默认反应，在函数参数后边加上`=`并赋上相应的值即可。
+
+```python
+def show_name(name='please enter your name',times=1):
+    print(name * times)
+
+show_name() # please enter your name
+show_name('robbin') # robbin
+```
+
+**注意**：函数参数默认值是根据位置(index)定位的，所以如果你给一个参数设置了默认值，那么此参数后边的所有参数必须有默认值，不然视为不合法。
+
+```python
+def show_name(name='please enter your name',times):
+    print(name * times)
+
+    # SyntaxError: non-default argument follows default argument
+```
+
+在调用某个函数时，你可以指定设置某个参数值，其他参数使用默认参数
+
+```python
+def show_name(name='please enter your name',times=1):
+    print(name * times)
+
+show_name(times=2) # RobbinRobbin
+show_name(name='Robbin') # Robbin
+```
+
+**注意**：当默认参数是可变对象时，该默认参数的指针总会指向可变对象的内存地址。
+
+```python
+def add(item, s=[]):
+    s.append(item)
+    print(s)
+
+add(1)    # [1]
+add(1,[]) # [1]
+add(1)    # [1,1]
+```
+
+从上面代码可以看出，函数默认参数的是一个变量，这个变量的指针在函数创建时被创建，指向默认参数提供的数组。当第二次调用函数时我们为默认参数提供了一个新数组，所以它会指向改数组的内存地址。但当我们继续调用函数并继续使用默认参数时，它又重新指向最初创建数组的地址。如何解决这个问题？
+
+```python
+def add(item, s=None):
+    if s == None:
+        s = []
+    s.append(item)
+    print(s)
+
+add(1)    # [1]
+add(1,[]) # [1]
+add(1)    # [1]
+```
+
+
+
 
 
 
