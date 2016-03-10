@@ -292,6 +292,26 @@ add(1,[]) # [1]
 add(1)    # [1]
 ```
 
+函数参数还可以定义一个可变参数，一般使用`*argument_name`表示一个元组，使用`**argument_name`表示一个数组。
+
+```python
+def add(*num):
+    print(len(num)) # 4
+add(1,2,3,4)
+```
+
+```python
+def add(**dic):
+    print(len(dic)) # 3
+add(var1=1,var2=2,var3=3)
+```
+
+`pass`关键字表示空代码块
+
+```Python
+def func():
+    pass
+```
 
 
 
