@@ -79,12 +79,30 @@ doc/**/*.pdf
 
 ## git log
 
-打印Commit，-p打印跟上一次commit之间的变化，-num（数字）打印变化的行数。
+打印Commit，-p打印跟上一次commit之间的变化，-num（数字）commit数。
 
 	$ git log -p -10
-	$ git log --stat #  打印状态
-	$ git log --pretty=oneline #打印一行
-	$ git log --pretty=format::"%h - %an, %ar : %s" # 按指定格式打印
+
+打印状态
+
+	$ git log --stat
+
+打印一行信息
+
+	$ git log --pretty=oneline
+    $ git log --oneline #打印一行内容（缩短了哈希字符长度）
+
+格式化输出
+
+	$ git log --pretty=format::"%h - %an, %ar : %s"
+
+打印branch和commit的信息
+
+    $ git log --oneline --decorate
+
+打印整个commit和branch关系图
+
+    $ git log --oneline --decorate --graph --all
 
 ## git checkout
 
@@ -95,6 +113,10 @@ doc/**/*.pdf
 对于分支来说，checkout命令可以跳转到任意分支
 
     $ git checkout [branchname]
+
+可以使用`checkout`命令创建一个`fast-forward`，也就是说创建一个新的分支，根据当前的commit
+
+    $ git checkout -b [branchname]
 
 
 ## git remote
@@ -171,4 +193,31 @@ fetch命令会从下载远程仓库中的所有分支。使用`fetch`命令仅�
 还可以是一组命令
 
     $ git config --local alias.last 'log -l HEAD'
+
+## git branch
+
+创建分支
+
+    $ git branch testing #创建一个名为testing的分支
+
+跳转分支
+
+    $ git checkout testing # 创建完分支后HEAD并不会自动指向该分支需要手动跳转到该分支
+
+创建并跳转分支,使用的是checkout命令
+
+    $ git checkout -b testing
+
+
+# git merge
+
+合并分支操作:以从`testing`分支到`master`分支为例
+
+    $ git branch testing # 首先创建一个分支
+    $ git checkout testing # 跳转到该分支
+    # do something
+    $ git commit -a -m 'testing' # 提交
+
+    $ git checkout master # 如果需要合并分支，首先要跳转回原分支。
+    $ git merge testing # 合并操作
 
