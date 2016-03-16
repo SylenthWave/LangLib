@@ -114,7 +114,7 @@ doc/**/*.pdf
 
     $ git checkout [branchname]
 
-可以使用`checkout`命令创建一个`fast-forward`，也就是说创建一个新的分支，根据当前的commit
+可以使用`checkout`命令创建一个新的分支，根据当前的commit。
 
     $ git checkout -b [branchname]
 
@@ -221,3 +221,5 @@ fetch命令会从下载远程仓库中的所有分支。使用`fetch`命令仅�
     $ git checkout master # 如果需要合并分支，首先要跳转回原分支。
     $ git merge testing # 合并操作
 
+如果`test`分支只是新添加了一些文件或者没有和`master`分支改变同一个文件，并且主动合并分支落后于被合并分支，合并的时候就会显示`Fast-forward`    
+如果`test`分支和`master`分支都改变了同一份文件，那么
