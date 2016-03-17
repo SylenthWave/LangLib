@@ -208,6 +208,17 @@ fetch命令会从下载远程仓库中的所有分支。使用`fetch`命令仅�
 
     $ git checkout -b testing
 
+删除分支命令
+
+    $ git brance -d [branchname]
+
+查看已经合并过的分支
+
+    $ git branch --merged
+
+查看还没合并过的分支
+
+    $ git branch --no-merged
 
 # git merge
 
@@ -221,5 +232,12 @@ fetch命令会从下载远程仓库中的所有分支。使用`fetch`命令仅�
     $ git checkout master # 如果需要合并分支，首先要跳转回原分支。
     $ git merge testing # 合并操作
 
-如果`test`分支只是新添加了一些文件或者没有和`master`分支改变同一个文件，并且主动合并分支落后于被合并分支，合并的时候就会显示`Fast-forward`    
-如果`test`分支和`master`分支都改变了同一份文件，那么
+* 如果`test`分支只是新添加了一些文件或者没有和`master`分支改变同一个文件，并且主动合并分支落后于被合并分支，合并的时候就会显示`Fast-forward`
+* 如果`test`分支和`master`分支都改变了一些文件，但不是同一个文件。那么当merge的时候会显示`Merge made by the 'recursive' strategy`。
+* 如果`test`分支和`master`分支都改变了同一个文件，那么就很可能发生冲突，这时候merge会显示`Conflict`。
+
+如果发生冲突可以使用`mergetool`来解决冲突。
+
+    $ git mergetool
+
+
