@@ -118,10 +118,14 @@ doc/**/*.pdf
 
     $ git checkout -b [branchname]
 
+在Clone一个新项目时，git会自动创建一个名为master的分支，用来表示远程仓库中的主分支。如果远程仓库中还有其他分支，在clone的时候他并不会将其他分支拉取到本地，所以如果你需要拉取远程仓库中其他分支的代码。可以使用如下命令：
+
+    $ git checkout -b [branchname] origin/[remotename]
+    $ git checkout --track origin/[remotename]
 
 ## git remote
 
-一个新建的项目初始化后并没有远程仓库的地址，需要我们手动添加。命令如下：git remote add <shortname> <url>
+一个新建的项目初始化后并没有远程仓库的地址，需要我们手动添加。命令如下：git remote add <shortname> <url>，也可以用此命令增加一个远程仓库地址
 
 	$ git remote add origin git@github.com/useremail/username
 
@@ -133,8 +137,9 @@ doc/**/*.pdf
 
 	$ git remote -v
 
-使用-v来打印Git储存的远程仓库地址
+使用`ls-remote`打印远程分支信息
 
+    $ git ls-remote origin
 
 ## git fetch
 
@@ -142,11 +147,38 @@ doc/**/*.pdf
 
 fetch命令会从下载远程仓库中的所有分支。使用`fetch`命令仅仅是下载数据至仓库中。并不会和当前仓库代码进行合并。
 
+如果需要你可以创建一个全新的分支来管理`fetch`到的仓库
+
+    $ git fetch origin
+    $ git checkout -b developer origin/developer
+
+也可以使用如下方式
+
+    $ git checkout --track origin/developer
+
+
+
 ## git push
 
 	$ git psuh [remote-name] [remote-brance]
 
 使用push命令将当前仓库代码更新到远程仓库中去。
+
+    $ git push origin master
+
+上述命令是push本地master代码到远程仓库。
+
+    $ git push origin developer
+
+如上命令是将developer分支代码提交到远程仓库
+
+    $ git push origin developer:dev
+
+如果你不想用当前分支的名字作为远程仓库中分支的名字的话，可以使用上述命令更改远程仓库分支名称
+
+    $ git push origin --delete [branchname]
+
+使用上述方法可以删除远程分支。
 
 ## git tag
 
@@ -220,7 +252,7 @@ fetch命令会从下载远程仓库中的所有分支。使用`fetch`命令仅�
 
     $ git branch --no-merged
 
-# git merge
+## git merge
 
 合并分支操作:以从`testing`分支到`master`分支为例
 
@@ -239,5 +271,34 @@ fetch命令会从下载远程仓库中的所有分支。使用`fetch`命令仅�
 如果发生冲突可以使用`mergetool`来解决冲突。
 
     $ git mergetool
+
+# git rebase
+
+`rebase`是合并分支时用到的第二个方法，试想一下，如果当前有两个分支（dev，master)，都修改了不同的文件并提交。那么当你想把dev中的修改合并到master时就需要两步：
+1. 切换到master分支
+2. 合并dev分支到master分支
+
+而使用`rebase`命令就会重新走一遍master的commit过程。这样也就是dev分支现在最顶端，并且有了master的代码。所以只需切换回master然后合并dev分支的代码即可(`fast-forward`合并。
+1. 使用`$ git rebase master`
+2. 切换到master分支
+3. 合并dev分支代码
+
+所以使用`rebase`提交的commit就会是一条直线。
+
+还有一种情况是，当有三条分支时，如果将最外层分支的代码合并到`master`分支而不影响他们之间的分支。可以使用如下命令
+
+    $ git rebase --onto master branch1 branch2
+
+它和merge是不同的，由于branch2是基于branch1的分支，如果是将branch2合并到master上的话，会将branch1中的commit合并到master中。
+
+
+
+
+
+
+
+
+
+
 
 
