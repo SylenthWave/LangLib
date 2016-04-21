@@ -14,7 +14,8 @@ Github仓库地址: https://github.com/suan/vim-instant-markdown
 这个markdown插件安装起来比较简单：
 
 1. 首先确保你已经安装了node环境和它的包管理工具npm（因为要使用它安装instant-markdown-d）
-2. 安装`suan/vim-instant-markdown`这个vim插件
-3. 确保在你的`.vimrc`文件中有开启了插件功能，也就是这句`filetype plugin on`
+2. 使用npm安装`instant-markdown-d`
+3. 安装`suan/vim-instant-markdown`这个vim插件
+4. 确保在你的`.vimrc`文件中有开启了插件功能，也就是这句`filetype plugin on`
 
 以上三步完成后就成功了，你可以试着创建或者打开一个markdown文件,enjoy！
