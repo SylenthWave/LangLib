@@ -7,5 +7,6 @@
 
  1. 首先我们需要Vim插件`fcitx-vim-osx`
  2. 需要安装`https://github.com/CodeFalling/fcitx-remote-for-osx`
+ 3. 安装fcitx需要注意的是直接使用Xcode编译
 
 然后有个小问题需要注意，你需要把你键盘设置的默认ABC的英文输入更换成US（美式英文）才能正常使用
