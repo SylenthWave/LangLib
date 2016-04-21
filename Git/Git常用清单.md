@@ -272,7 +272,7 @@ fetch命令会从下载远程仓库中的所有分支。使用`fetch`命令仅�
 
     $ git mergetool
 
-# git rebase
+## git rebase
 
 `rebase`是合并分支时用到的第二个方法，试想一下，如果当前有两个分支（dev，master)，都修改了不同的文件并提交。那么当你想把dev中的修改合并到master时就需要两步：
 1. 切换到master分支
